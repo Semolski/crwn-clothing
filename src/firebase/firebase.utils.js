@@ -3,13 +3,13 @@ import 'firebase/firestore';
 import 'firebase/auth';
 
 const config = {
-    apiKey: "AIzaSyCeQzEDUV4Xsc8Z9qF1_0R3Tn8cpcsAqOk",
-    authDomain: "candc-db.firebaseapp.com",
-    projectId: "candc-db",
-    storageBucket: "candc-db.appspot.com",
-    messagingSenderId: "298591879533",
-    appId: "1:298591879533:web:93a19061e89132f0bd1a64",
-    measurementId: "G-ZP155LD85K"
+    apiKey: "AIzaSyBXKQzZnrdXC7ubAZGFWjHZyI4S8W7Nn-k",
+    authDomain: "candc-db-345d9.firebaseapp.com",
+    projectId: "candc-db-345d9",
+    storageBucket: "candc-db-345d9.appspot.com",
+    messagingSenderId: "584679199552",
+    appId: "1:584679199552:web:f12dc3e230cf56bd49a0a5",
+    measurementId: "G-4HE36PXEYY"
 };
 
 firebase.initializeApp(config);
