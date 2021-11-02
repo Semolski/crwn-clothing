@@ -3,13 +3,12 @@ import 'firebase/firestore';
 import 'firebase/auth';
 
 const config = {
-    apiKey: "AIzaSyBXKQzZnrdXC7ubAZGFWjHZyI4S8W7Nn-k",
-    authDomain: "candc-db-345d9.firebaseapp.com",
-    projectId: "candc-db-345d9",
-    storageBucket: "candc-db-345d9.appspot.com",
-    messagingSenderId: "584679199552",
-    appId: "1:584679199552:web:f12dc3e230cf56bd49a0a5",
-    measurementId: "G-4HE36PXEYY"
+    apiKey: "AIzaSyBBqptB4hW1ap_VMQm5IiIRWWFJTLL5wx4",
+    authDomain: "testing-crwn.firebaseapp.com",
+    projectId: "testing-crwn",
+    storageBucket: "testing-crwn.appspot.com",
+    messagingSenderId: "1084968929643",
+    appId: "1:1084968929643:web:c51d1f01b103dcd84d242e"
 };
 
 firebase.initializeApp(config);
