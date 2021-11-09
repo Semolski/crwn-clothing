@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
@@ -17,19 +17,15 @@ import { checkUserSession } from "./redux/user/user.actions";
 
 import { selectCollectionsForPreview} from "./redux/shop/shop.selectors";
 
-class App extends React.Component {
-    unsubscribeFromAuth = null;
-
-    componentDidMount() {
-        const {checkUserSession} = this.props;
-        checkUserSession();
-    }
-
-    componentWillUnmount() {
-        this.unsubscribeFromAuth();
-    }
-
-    render() {
+const App = ({checkUserSession, currentUser}) => {
+    useEffect(() => {
+        checkUserSession()
+    }, [checkUserSession])
+    // We only want to invoke checkUserSession the first time when we pass it in and not fire when
+    // currentUser updates, so we pass into the dependency array passing checkUserSession.
+    // We do this because checkUserSession is a property function that is being passed in from
+    // mapDispatchToProps. If this was a property being passed in from a parent we would do
+    // something different.
         return (
             <div>
                 <Header />
@@ -41,7 +37,7 @@ class App extends React.Component {
                         exact
                         path='/signin'
                         render={() =>
-                            this.props.currentUser ? (
+                            currentUser ? (
                                 <Redirect to='/' />
                             ) : (
                                 <SignInAndSignUpPage />
@@ -51,7 +47,6 @@ class App extends React.Component {
                 </Switch>
             </div>
         );
-    }
 }
 
 const mapStateToProps = createStructuredSelector({
